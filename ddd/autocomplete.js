@@ -40,6 +40,14 @@ function autocomplete(inp, arr) {
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
+                if (inp.value)
+                {
+                    addIngredient(inp.value);
+                    document.getElementById('ingredient').value = '';
+                    document.getElementById('ingredient').focus();
+                } 
+
+                
             });
             a.appendChild(b);
           }

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.css">
+        <link rel="stylesheet" href="light_sketchy.css">
         <link rel="stylesheet" href="https://bootswatch.com/_vendor/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="index.css">
     </head>
@@ -14,12 +14,11 @@
                                 <input type="text" class="form-control" placeholder="Ingredient name" id="ingredient">
                             </div>
                         </div>
-                      <button id="addbtn" class="col-lg-4 offset-lg-4 col-md-6 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 btn btn-primary my-4" role="button" tabindex="0">Add</button>
+                      <button id="addbtn" style="display: none;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 btn btn-primary my-4" role="button" tabindex="0">Add</button>
                     </form>
                 </div>
                 <div class="col-12 py-5">
-                    <div class="list-group col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12" id="itemgroup">
-                    </div>
+                    <div class="list-group col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12" id="itemgroup"></div>
                 </div>
                 <div id="generate">
                     <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-xs-12">
@@ -29,20 +28,34 @@
             </div>
         </div>
 
-        <div style="opacity: 0; display: none;" id="waitTab" class="w-100 h-100">
-            <img src="1.jpg" alt="BG" class="plate">
+        <div style="opacity: 0; display: none;" id="waitTab" class="w-100 h150">
+            <img src="1.jpg" id="plate" alt="BG" class="plate">
             <img src="2.png" id="lobster" alt="LS" class="lobster">
         </div>
         
         <div style="opacity: 0; display: none;" id="instructionsTab" class="container-fluid py-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 align-items-top justify-content-center d-flex fs">
+                    <div class="col-lg-4 col-md-6 col-sm-10 col-xs-12" >
+                        <div  class="my-5">
+                            <h1>Ingredients:</h1>
+                            <div id="ingredients_container">
+                            </div>
+                        </div>
+                        <br class="mx-5">
+                        <div  class="my-5">
+                            <h1>Instructions:</h1>
+                            <p id="instruction_container" class="my-3">
+                            </p>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
         </div>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios.min.js"></script>
     <script src="index.js"></script>
     <script src="autocomplete.js"></script>
+    <script src="generate.js"></script>
 </html>
